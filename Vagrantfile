@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
     db.vm.box = "ubuntu/bionic64"
     db.vm.network "private_network", ip:"192.168.10.150"
     db.vm.synced_folder "environment", "/home/vagrant/environment"
+    db.vm.provision "shell", path: "db_provision.sh", privileged: false
 
 
     
