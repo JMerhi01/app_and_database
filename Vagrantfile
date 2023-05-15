@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     app.vm.synced_folder "app", "/home/vagrant/app"
 
   # provision the VM to have Nginx
-    app.vm.provision "shell", path: "provision.sh", privileged: false
+    app.vm.provision "shell", path: "rproxy_prov.sh", privileged: false
   end  
   config.vm.define "db" do |db| 
     db.vm.box = "ubuntu/bionic64"
